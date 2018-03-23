@@ -33,3 +33,10 @@ body {
     font-weight: 300;
     line-height: 1.6;
 }
+
+.container {
+    display: grid;
+    // 1: realtors  80vh - 2: features min-content - 3: features 40vw 
+    // 4: cards + image gallery + footer min-width: content;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+}
