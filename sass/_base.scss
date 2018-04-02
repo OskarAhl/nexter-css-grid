@@ -39,18 +39,19 @@ body {
     // 1: realtors  80vh - 2: features min-content - 3: features 40vw 
     // 4: cards + image gallery + footer min-width: content;
     // why not name rows ? most of layout hangs on columns
-    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    // Original:  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: 80vh min-content min-content repeat(3, min-content);
     //1: sidebar - 3: 1fr - center 8 col content (if needed) 2: content 8 column grid - min min-content max 140px
     // last: 1fr center 8col content (if needed);
-    grid-template-columns: 
-        [sidebar-start] 8rem 
-        [sidebar-end full-start] minmax(6rem, 1fr)
-        [center-start] 
-            repeat(8, [col-start] 
-                minmax(min-content, 14rem) 
-                [col-end]) 
-        [center-end] minmax(6rem, 1fr) [full-end];
-
+    // grid-template-columns: 
+    //     [sidebar-start] 8rem 
+    //     [sidebar-end full-start] minmax(6rem, 1fr)
+    //     [center-start] 
+    //         repeat(8, [col-start] 
+    //             minmax(min-content, 14rem) 
+    //             [col-end]) 
+    //     [center-end] minmax(6rem, 1fr) [full-end];
+        grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
     // for dev target all children
     // & > * {
     //     padding: 30px;
