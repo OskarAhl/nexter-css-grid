@@ -17,10 +17,19 @@
     &__img {
         width: 100%;
         grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        z-index: 1;
     }
 
     &__like {
-
+        grid-row:  1 / 2;
+        grid-column: 2 / 3;
+        justify-self: end;
+        margin: 1rem; 
+        fill: $color-primary;
+        height: 2.5rem;
+        width: 2.5rem;
+        z-index: 2;
     }
 
     &__name {
