@@ -1,4 +1,30 @@
 .gallery {
-    background-color: $color-grey-dark-1;
     grid-column: full-start / full-end;
+
+    display: grid;
+    // when setting up rows and columns --> consider smallest row / column
+    grid-template-columns: repeat(8, 1fr);
+    // cells maintain aspect ratio during resize 
+    // --> height is tied to vw
+    grid-template-rows: repeat(7, 5vw);
+    grid-gap: 1.5rem;
+    padding: 1.5rem;
+
+    &__item {
+        &--1 {
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 2;
+        }
+    }
+
+    &__img {
+        height: 100%;;
+        width: 100%;
+        // How to make images fit container ? (css grid box here)
+        // ---> add parent div + object fit cover 
+        //  object fit only works if WIDTH AND HEIGHT
+        object-fit: cover;
+        // removes weird white space
+        display: block;
+    }
 }
