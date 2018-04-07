@@ -1,3 +1,9 @@
+/*
+    To do: add suppport for older browsers (edge, IE)
+    with @supports(display: grid) {
+        ...
+    }
+*/
 *,
 *::before,
 *::after {
