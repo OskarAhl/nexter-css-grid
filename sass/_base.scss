@@ -15,8 +15,10 @@ $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
 // RESPONSIVE BREAKPOINTS
-$bp-largest: 75em; // 1200px
-$bp-large: 62.5em; // 1000px
+$bp-largest: 75em;  // 1200px
+$bp-large: 62.5em;  // 1000px
+$bp-medium: 50em;   // 800px
+$bp-small: 37.5em;  // 600px
 
 *,
 *::before,
@@ -79,5 +81,13 @@ body {
                     minmax(min-content, 14rem) 
                     [col-end]) 
             [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+    // add realtors below main header as row instead of column
+    // --> add min-content row (nr 3)
+    // header fill 100vh + 6rem (for navbar)
+    @media only screen and (max-width: $bp-medium) {
+        display: grid;
+        grid-template-rows: 6rem calc(100vh - 6rem);
     }
 }
